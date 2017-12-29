@@ -1,0 +1,10 @@
+<h1>Blog Posts</h1>
+<% @posts.each do |p| %>
+    <article class="well">
+      <h2><%= p.title %></h2>
+      <small><%= p.author %></small>
+      <p><%= p.body %></p>
+      <!-- TODO: Link does not redirect to the specific post -->
+      <%= link_to "Go to post",posts_path(@post), :class => "btn btn-default" %>
+    </article>
+<% end %>
