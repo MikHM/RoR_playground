@@ -1,0 +1,9 @@
+<% @post.comments.each do |comment| %>
+    <div class="well">
+      <p><strong><%= comment.user_name %></strong></p>
+      <p><%= comment.message %></p>
+      <p><%= link_to "Remove comment", [comment.post, comment],
+                     method: :delete,
+                     data: { confirm: "Are you sure?" }%></p>
+    </div>
+<% end %>

@@ -8,8 +8,15 @@
 <hr>
 
 <%= link_to "Edit", edit_post_path(@post), :class => "btn btn-default" %>
-<!-- TODO: data/confirmation is not working properly. -->
 <%= link_to "Delete", post_path(@post),
             method: :delete,
-            data: { confirmation: "Are you sure?"},
+            data: { confirm: "Are you sure?"},
             :class => "btn btn-danger" %>
+
+<hr>
+
+<%= render "comments/comments" %>
+
+<hr>
+
+<%= render "comments/comments_form" %>
