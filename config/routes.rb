@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  root 'application#index'
 
-  root 'posts#index', as: 'home'
+  get 'posts/index', as: 'blog'
 
   resources :posts do
     resources :comments
