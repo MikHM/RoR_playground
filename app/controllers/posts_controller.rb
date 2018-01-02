@@ -1,57 +1,53 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
-  http_basic_authenticate_with name: 'admin', password: 'pswadmin', except: [:index, :show]
+class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: 'admin', password: 'pswadmin', except: %i[index show]
 
   def index
     @posts = Post.all
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  def show; end
 
   def new
     @post = Post.new
   end
 
   def create
-    #render plain: params[:post].inspect
+    # render plain: params[:post].inspect
     @post = Post.new(post_params)
 
     if @post.save
       redirect_to @post
     else
-      render "new"
+      render 'new'
     end
-
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to @post
     else
-      render "edit"
+      render 'edit'
     end
-
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     redirect_to posts_path
   end
 
-
   private
-    def post_params
-      params.require(:post).permit(:title, :body, :author)
-    end
 
+  def post_params
+    params.require(:post).permit(:title, :body, :author)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 end
