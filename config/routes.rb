@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+  get 'pages/contact'
+  get 'pages/about'
+
   root 'application#index'
 
   get 'posts/index', as: 'blog'
