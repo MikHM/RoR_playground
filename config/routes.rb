@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :portfolios
   get 'pages/home'
   get 'pages/contact'
   get 'pages/about'
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'posts/index', as: 'blog'
 
+  resources :portfolios
   resources :posts do
     resources :comments
   end
