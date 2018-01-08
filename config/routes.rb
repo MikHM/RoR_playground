@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'posts/index', as: 'blog'
 
-  resources :portfolios
+  resources :portfolios, except: [:show]
+  get 'portfolio/:id' => 'portfolio#show', as: 'portfolio_show'
+
   resources :posts do
     resources :comments
   end
