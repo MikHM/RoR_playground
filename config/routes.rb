@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  get 'pages/home'
   get 'contact' => 'pages#contact'
   get 'about' => 'pages#about'
 
-  get 'posts/index', as: 'blog'
-
   resources :portfolios, except: [:show]
   get 'portfolio/:id' => 'portfolio#show', as: 'portfolio_show'
+
+  namespace :admin do
+    get 'dashboard/main'
+    get 'dashboard/users'
+    get 'dashboard/posts'
+  end
 
   resources :posts do
     member do
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+
 
   get 'apps', to: 'application#index'
 
