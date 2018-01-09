@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   http_basic_authenticate_with name: 'admin', password: 'pswadmin', except: %i[index show]
 
   def index
@@ -39,6 +39,16 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to posts_path
+  end
+
+  def toggle_status
+    if @post.draft?
+      @post.published!
+    elsif @post.published?
+      @post.draft!
+    end
+
+    redirect_to edit_post_path, notice: "Post's status has been updated."
   end
 
   private

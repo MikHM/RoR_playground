@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'portfolio/:id' => 'portfolio#show', as: 'portfolio_show'
 
   resources :posts do
+    member do
+      get :toggle_status
+    end
     resources :comments
   end
 
