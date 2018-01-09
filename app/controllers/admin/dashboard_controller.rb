@@ -10,4 +10,9 @@ class Admin::DashboardController < ApplicationController
   def users
 
   end
+
+  def something
+    @first = params[:premier]
+    @second = params[:deuxieme]
+  end
 end
