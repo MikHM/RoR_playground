@@ -1,0 +1,11 @@
+<h1>Home</h1>
+
+<h2>Blog Posts</h2>
+<% @posts.each do |post| %>
+  <li><%= post.title %></li>
+<% end %>
+
+<h2>Skills</h2>
+<% @skills.each do |skill| %>
+  <li><%= skill.title %> <%= skill.percent_spent_on %>%</li>
+<% end %>
