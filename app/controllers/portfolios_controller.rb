@@ -2,7 +2,9 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
   def index
-    @portfolios = Portfolio.all
+    #@portfolios = Portfolio.all
+    @portfolios = Portfolio.react
+    #@portfolios = Portfolio.ruby_on_rails_portfolio_items
   end
 
   def new
