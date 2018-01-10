@@ -20,7 +20,8 @@ end
 # ###################################
 5.times do |skill|
   Skill.create!(
-    title: "Skill's number #{skill}"
+    title: "Skill's number #{skill}",
+    percent_spent_on: 1
   )
 end
 
