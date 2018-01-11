@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   resources :portfolios, except: [:show]
-  get 'portfolio/:id' => 'portfolio#show', as: 'portfolio_show'
+  get 'portfolio/:id' => 'portfolios#show', as: 'portfolio_show'
 
   namespace :admin do
     get 'dashboard/main'
