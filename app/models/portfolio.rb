@@ -3,12 +3,16 @@ class Portfolio < ApplicationRecord
 
   validates_presence_of :title, :subtitle, :body, :main_image, :thumb_image
 
+  has_many :technologies
+
+  ## scopes
   def self.react
     where(subtitle: "React")
   end
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby On Rails")}
 
+  # initializing
   after_initialize :set_defaults
 
   def set_defaults

@@ -53,3 +53,19 @@ end
   )
 end
 
+technologies = ["JavaScript", "Ruby", "NodeJS", "Ruby On Rails"]
+count = 0
+=begin
+technologies.each do |technology|
+  Technology.create!(
+                name: "#{technology}",
+                portfolio_id: count += 1
+  )
+end
+=end
+
+technologies.each do |tech|
+  Portfolio.find(count += 1).technologies.create!(
+      name: "#{tech}"
+      )
+end
