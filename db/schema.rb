@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110164228) do
+ActiveRecord::Schema.define(version: 20180111132233) do
 
   create_table "comments", force: :cascade do |t|
     t.string "user_name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180110164228) do
     t.integer "percent_spent_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "badge"
   end
 
   create_table "topics", force: :cascade do |t|
