@@ -1,4 +1,8 @@
 <%= image_tag @portfolio_item.main_image %>
 <h1><%= @portfolio_item.title %></h1>
-<h4><%= @portfolio_item.subtitle %></h4>
+<em><%= @portfolio_item.subtitle %></em>
 <p><%= @portfolio_item.body%></p>
+<h2>Technologies Used:</h2>
+<% @portfolio_item.technologies.each do |t| %>
+  <span><%= t.name %></span>
+<% end %>
