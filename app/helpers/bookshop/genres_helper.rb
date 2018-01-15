@@ -1,0 +1,2 @@
+module Bookshop::GenresHelper
+end

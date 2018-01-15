@@ -14,6 +14,7 @@ topics.each do |topic|
   Topic.create!(title: "#{topic}")
 end
 
+
 # Blog Posts
 # ###################################
 10.times do |post|
@@ -24,6 +25,7 @@ end
   )
 end
 
+
 # SKILLS
 # ###################################
 5.times do |skill|
@@ -33,6 +35,9 @@ end
   )
 end
 
+
+# Portfolio Items
+# ###################################
 9.times do |portfolio_item|
   Portfolio.create!(
                title: "Portfolio number #{portfolio_item + 1}",
@@ -42,6 +47,7 @@ end
                thumb_image: "http://via.placeholder.com/350x150"
   )
 end
+
 
 1.times do |portfolio_item|
   Portfolio.create!(
@@ -53,6 +59,9 @@ end
   )
 end
 
+
+# TECHNOLOGIES
+# ###################################
 technologies = ["JavaScript", "Ruby", "NodeJS", "Ruby On Rails"]
 count = 0
 =begin
@@ -68,4 +77,16 @@ technologies.each do |tech|
   Portfolio.find(count += 1).technologies.create!(
       name: "#{tech}"
       )
+end
+
+
+# ***************************************
+# BOOKSHOP
+# ***************************************
+
+# GENRES
+# ###################################
+genres = ["Fantasy", "Programming", "Self-help", "Novel", "Psychology"]
+genres.each do |genre|
+  Bookshop::Genre.create!(name: "#{genre}")
 end

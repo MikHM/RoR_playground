@@ -8,7 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    # TODO: undefined method `new_record?' for nil:NilClass
+    #@comment = @post.comments.build if @post.comments.last.new_record?
+  end
 
   def new
     @post = Post.new
