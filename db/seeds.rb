@@ -90,3 +90,14 @@ genres = ["Fantasy", "Programming", "Self-help", "Novel", "Psychology"]
 genres.each do |genre|
   Bookshop::Genre.create!(name: "#{genre}")
 end
+
+# AUTHORS
+# ###################################
+3.times do |author|
+  Bookshop::Author.create!(
+      name:"Author n°#{author + 1}",
+      alias: "Author n°#{author + 1}'s Alias",
+      country: "His Country",
+      biography: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+  )
+end

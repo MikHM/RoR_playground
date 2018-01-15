@@ -1,0 +1,2 @@
+module Bookshop::AuthorsHelper
+end
