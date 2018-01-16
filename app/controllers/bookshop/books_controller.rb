@@ -1,5 +1,5 @@
 class Bookshop::BooksController < ApplicationController
   def index
-    @books = Bookshop::Book.all
+    @books = Bookshop::Book.includes(:genre, :author)
   end
 end

@@ -86,9 +86,24 @@ end
 
 # AUTHORS
 # ###################################
-cal_newport = Bookshop::Author.create!(name: "Cal Newport", country: "United States")
-john_j_ratey = Bookshop::Author.create!(name: "John J. Ratey", country: "United States")
-charles_duhigg = Bookshop::Author.create!(name: "Charles Duhigg", country: "United States")
+cal_newport = Bookshop::Author.create!(
+    name: "Cal Newport", country: "United States",
+    biography: "Cal Newport, is Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+    veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.")
+john_j_ratey = Bookshop::Author.create!(
+    name: "John J. Ratey", country: "United States",
+    biography: "John J. Ratey is Sed ut perspiciatis unde omnis iste natus error sit
+    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+     voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.")
+charles_duhigg = Bookshop::Author.create!(
+    name: "Charles Duhigg", country: "United States",
+    biography: "Charles Duhigg is Sed ut perspiciatis unde omnis iste natus error sit
+    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+    ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.")
 
 # GENRES
 # ###################################
