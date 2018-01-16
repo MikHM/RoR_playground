@@ -84,32 +84,21 @@ end
 # BOOKSHOP
 # ***************************************
 
-# GENRES
-# ###################################
-genres = ["Fantasy", "Programming", "Self-help", "Novel", "Psychology"]
-genres.each do |genre|
-  Bookshop::Genre.create!(name: "#{genre}")
-end
-
 # AUTHORS
 # ###################################
-3.times do |author|
-  Bookshop::Author.create!(
-      name:"Author n°#{author + 1}",
-      alias: "Author n°#{author + 1}'s Alias",
-      country: "His Country",
-      biography: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-  )
-end
+cal_newport = Bookshop::Author.create!(name: "Cal Newport", country: "United States")
+john_j_ratey = Bookshop::Author.create!(name: "John J. Ratey", country: "United States")
+charles_duhigg = Bookshop::Author.create!(name: "Charles Duhigg", country: "United States")
+
+# GENRES
+# ###################################
+fiction     = Bookshop::Genre.create!(name: "Fiction")
+non_fiction = Bookshop::Genre.create!(name: "Non-Fiction")
+biographies = Bookshop::Genre.create!(name: "Biographies")
 
 # BOOKS
 # ###################################
-3.times do |book|
-  Bookshop::Book.create!(
-      title: "Book n°#{book}",
-      year: 2012,
-      summary: "
-Never Split the Difference: Negotiating as if Your Life Depended on It (Anglais) Broché – 23 mars 2017
-"
-  )
-end
+Bookshop::Book.create!(title: "Deep Work", genre_id: non_fiction.id, author_id: cal_newport.id)
+Bookshop::Book.create!(title: "Spark", genre_id: fiction.id, author_id: john_j_ratey.id)
+Bookshop::Book.create!(title: "The Power Of Habits", genre_id: biographies.id, author_id: charles_duhigg.id)
+Bookshop::Book.create!(title: "So Good They Can't Ignore You", genre_id: non_fiction.id, author_id: cal_newport.id)

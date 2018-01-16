@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :bookshop do
     resources :genres
+    resources :authors
+    resources :books
   end
 
 
