@@ -98,7 +98,7 @@ biographies = Bookshop::Genre.create!(name: "Biographies")
 
 # BOOKS
 # ###################################
-Bookshop::Book.create!(title: "Deep Work", genre_id: non_fiction.id, author_id: cal_newport.id)
-Bookshop::Book.create!(title: "Spark", genre_id: fiction.id, author_id: john_j_ratey.id)
-Bookshop::Book.create!(title: "The Power Of Habits", genre_id: biographies.id, author_id: charles_duhigg.id)
-Bookshop::Book.create!(title: "So Good They Can't Ignore You", genre_id: non_fiction.id, author_id: cal_newport.id)
+Bookshop::Book.create!(title: "Deep Work", genre_id: non_fiction.id, author_id: cal_newport.id, sales: 231)
+Bookshop::Book.create!(title: "Spark", genre_id: fiction.id, author_id: john_j_ratey.id, sales: 132)
+Bookshop::Book.create!(title: "The Power Of Habits", genre_id: biographies.id, author_id: charles_duhigg.id, sales: 32)
+Bookshop::Book.create!(title: "So Good They Can't Ignore You", genre_id: non_fiction.id, author_id: cal_newport.id, sales: 563)
