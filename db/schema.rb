@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111144007) do
+ActiveRecord::Schema.define(version: 20180116093545) do
+
+  create_table "bookshop_authors", force: :cascade do |t|
+    t.string "name"
+    t.string "alias"
+    t.string "country"
+    t.text "biography"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookshop_books", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.text "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.integer "genre_id"
+    t.integer "sales"
+    t.index ["author_id"], name: "index_bookshop_books_on_author_id"
+    t.index ["genre_id"], name: "index_bookshop_books_on_genre_id"
+  end
+
+  create_table "bookshop_genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "user_name"
@@ -31,6 +59,12 @@ ActiveRecord::Schema.define(version: 20180111144007) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "portfolios", force: :cascade do |t|

@@ -1,14 +1,15 @@
 <h3>Add comments</h3>
 
+<!-- TODO: Find a way to DISPLAY the error messages if comment not valid.-->
+<!--
+<-% if @post.comments.last.errors.any? %>
+  <-%= @post.comments.last.errors.full_messages.each do |msg| %>
+    <p><-%= msg %></p>
+  <-% end %>
+<-% end %>
+-->
+
 <%= form_for([@post, @post.comments.build]) do |f| %>
-
-
-  <!-- TODO: Find a way to DISPLAY the error messages if comment not valid.-->
-  <% if @post.comments.build.errors.any? %>
-    <%= @post.comment.build.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-  <% end %>
 
   <p>
     <%= f.label :user_name %> <br>

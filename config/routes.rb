@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :bookshop do
+    resources :genres
+    resources :authors
+    resources :books
+  end
+
+
   get 'contact' => 'pages#contact'
   get 'about' => 'pages#about'
 

@@ -14,6 +14,7 @@ topics.each do |topic|
   Topic.create!(title: "#{topic}")
 end
 
+
 # Blog Posts
 # ###################################
 10.times do |post|
@@ -24,6 +25,7 @@ end
   )
 end
 
+
 # SKILLS
 # ###################################
 5.times do |skill|
@@ -33,6 +35,9 @@ end
   )
 end
 
+
+# Portfolio Items
+# ###################################
 9.times do |portfolio_item|
   Portfolio.create!(
                title: "Portfolio number #{portfolio_item + 1}",
@@ -42,6 +47,7 @@ end
                thumb_image: "http://via.placeholder.com/350x150"
   )
 end
+
 
 1.times do |portfolio_item|
   Portfolio.create!(
@@ -53,6 +59,9 @@ end
   )
 end
 
+
+# TECHNOLOGIES
+# ###################################
 technologies = ["JavaScript", "Ruby", "NodeJS", "Ruby On Rails"]
 count = 0
 =begin
@@ -69,3 +78,42 @@ technologies.each do |tech|
       name: "#{tech}"
       )
 end
+
+
+# ***************************************
+# BOOKSHOP
+# ***************************************
+
+# AUTHORS
+# ###################################
+cal_newport = Bookshop::Author.create!(
+    name: "Cal Newport", country: "United States",
+    biography: "Cal Newport, is Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+    veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.")
+john_j_ratey = Bookshop::Author.create!(
+    name: "John J. Ratey", country: "United States",
+    biography: "John J. Ratey is Sed ut perspiciatis unde omnis iste natus error sit
+    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+     voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.")
+charles_duhigg = Bookshop::Author.create!(
+    name: "Charles Duhigg", country: "United States",
+    biography: "Charles Duhigg is Sed ut perspiciatis unde omnis iste natus error sit
+    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+    ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.")
+
+# GENRES
+# ###################################
+fiction     = Bookshop::Genre.create!(name: "Fiction")
+non_fiction = Bookshop::Genre.create!(name: "Non-Fiction")
+biographies = Bookshop::Genre.create!(name: "Biographies")
+
+# BOOKS
+# ###################################
+Bookshop::Book.create!(title: "Deep Work", genre_id: non_fiction.id, author_id: cal_newport.id, sales: 231)
+Bookshop::Book.create!(title: "Spark", genre_id: fiction.id, author_id: john_j_ratey.id, sales: 132)
+Bookshop::Book.create!(title: "The Power Of Habits", genre_id: biographies.id, author_id: charles_duhigg.id, sales: 32)
+Bookshop::Book.create!(title: "So Good They Can't Ignore You", genre_id: non_fiction.id, author_id: cal_newport.id, sales: 563)
