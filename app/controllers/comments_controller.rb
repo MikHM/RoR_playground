@@ -3,9 +3,14 @@ class CommentsController < ApplicationController
   http_basic_authenticate_with name: 'admin', password: 'pswadmin', only: [:destroy]
 
   def create
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.new(comment_params)
 
-    redirect_to post_path(@post)
+    if @comment.save
+      redirect_to post_path(@post)
+    else
+      render 'posts/show'
+    end
+
   end
 
   def destroy
