@@ -1,6 +1,6 @@
 <h2>Editing: <%= @post.title %></h2>
 
-<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+<%= form_for :post, url: blog_post_path(@post), method: :patch do |f| %>
 
   <% if @post.errors.any? %>
     <%= @post.errors.full_messages.each do |msg| %>
@@ -22,7 +22,7 @@
   </p>
   <p>
     <%= f.label :topic_id %>
-    <%= f.select( :topic_id, Topic.all.map{ |topic| [topic.title, topic.id] }) %>
+    <%= f.select( :topic_id, Blog::Topic.all.map{ |topic| [topic.title, topic.id] }) %>
   </p>
 
   <p>

@@ -8,7 +8,9 @@
   <-% end %>
 <-% end %>
 -->
-
+<%
+=begin %>
+<!-- TODO: fix this path issue!!-->
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
   <p>
@@ -25,3 +27,5 @@
     <%= f.submit(:class => "btn btn-primary")  %>
   </p>
 <% end %>
+<%
+=end %>

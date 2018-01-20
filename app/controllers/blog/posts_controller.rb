@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class PostsController < ApplicationController
+class Blog::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   http_basic_authenticate_with name: 'admin', password: 'pswadmin', except: %i[index show]
 
   def index
-    @posts = Post.all
+    @posts = Blog::Post.all
   end
 
   def show
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to blog_posts_path
   end
 
   def toggle_status
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
       @post.draft!
     end
 
-    redirect_to edit_post_path, notice: "Post's status has been updated."
+    redirect_to edit_blog_post_path, notice: "Post's status has been updated."
   end
 
   private
@@ -64,6 +64,6 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.friendly.find(params[:id])
+    @post = Blog::Post.friendly.find(params[:id])
   end
 end
