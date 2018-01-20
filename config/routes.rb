@@ -22,11 +22,13 @@ Rails.application.routes.draw do
     get 'dashboard/:premier/:deuxieme', to: 'dashboard#something'
   end
 
-  resources :posts do
-    member do
-      get :toggle_status
+  namespace :blog do
+    resources :posts do
+      member do
+        get :toggle_status
+      end
+      resources :comments
     end
-    resources :comments
   end
 
 

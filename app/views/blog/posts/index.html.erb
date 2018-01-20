@@ -4,6 +4,6 @@
       <h2><%= p.title %></h2>
       <small><%= p.author %></small>
       <p><%= p.body %></p>
-      <%= link_to "Go to post", post_path(p), :class => "btn btn-default" %>
+      <%= link_to "Go to post", blog_post_path(p), :class => "btn btn-default" %>
     </article>
 <% end %>
