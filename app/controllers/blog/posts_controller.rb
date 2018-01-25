@@ -3,6 +3,7 @@
 class Blog::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   http_basic_authenticate_with name: 'admin', password: 'pswadmin', except: %i[index show]
+  layout "blog"
 
   def index
     @posts = Blog::Post.all
