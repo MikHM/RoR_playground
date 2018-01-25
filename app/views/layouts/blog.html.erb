@@ -12,31 +12,14 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div>
-      <%# TODO: put current_user checking inside of a helper method cuz this is a bad practice to have this in the view %>
-      <% if current_user.is_a?(User) %>
-      <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-      <% else %>
-        <p><%= link_to "Login", new_user_session_path %></p>
-        <p><%= link_to "Register", new_user_registration_path %></p>
-      <% end %>
-    </div>
+
+    <%= render "shared/navigation" %>
 
     <%= yield %>
     
     <footer>
-      <nav>
-        <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Blog", blog_posts_path %></li>
-          <%# TODO: remove Bookshop, it will be accessible from projects/portfolios %>  
-          <li><%= link_to "Bookshop", bookshop_books_path %></li>
-          <li><%= link_to "Projects", portfolios_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>          
-        </ul>
-      </nav>
     </footer>
+
     <%# TODO: Why is this showing up in templates even if "session[:source]" is not provided in the url??" %>
     <% if session[:source] %>
       <p>Thanks for visiting from <%= session[:source] %></p>
