@@ -6,11 +6,14 @@ class Blog::PostsController < ApplicationController
 
   def index
     @posts = Blog::Post.all
+    @page_title += " - Blog" 
   end
 
   def show
     # TODO: undefined method `new_record?' for nil:NilClass
     #@comment = @post.comments.build if @post.comments.last.new_record?
+    @page_title = @post.title
+    @seo_keywords += " #{@post.body}"
   end
 
   def new
