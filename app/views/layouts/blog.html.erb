@@ -20,10 +20,7 @@
     <footer>
     </footer>
 
-    <%# TODO: Why is this showing up in templates even if "session[:source]" is not provided in the url??" %>
-    <% if session[:source] %>
-      <p>Thanks for visiting from <%= session[:source] %></p>
-    <% end %>
+    <%= source_helper("Blog") %>
 
   </body>
 

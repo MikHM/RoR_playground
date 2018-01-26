@@ -8,4 +8,12 @@ module ApplicationHelper
       (link_to "Register", new_user_registration_path)
     end
   end
+
+  def source_helper(layout)
+    # TODO: Why is this showing up in templates even if "session[:source]" is not provided in the url??"
+    if session[:source]
+      greeting = "Thanks for visiting from #{session[:source]} and you are on #{layout}."
+      content_tag(:p, greeting, class: "source-greeting")
+    end
+  end
 end
