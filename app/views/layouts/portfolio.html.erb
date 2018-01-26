@@ -16,7 +16,7 @@
     <%= yield %>
     
     <footer>
-      <%= render "shared/navigation" %>
+      <%= render "shared/navigation", navbar_location: "bottom" %>
     </footer>
     
     <%# TODO: Why is this showing up in templates even if "session[:source]" is not provided in the url??" %>

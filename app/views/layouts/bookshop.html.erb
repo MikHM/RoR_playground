@@ -13,11 +13,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render "shared/navigation", navbar_location: "top" %>
+
     <%= yield %>
     
-    <footer>
-      <%= render "shared/navigation" %>
-    </footer>
+    <footer></footer>
     
     <%# TODO: Why is this showing up in templates even if "session[:source]" is not provided in the url??" %>
     <% if session[:source] %>

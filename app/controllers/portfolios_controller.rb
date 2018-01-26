@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
   layout "portfolio"
 
   def index
-    # TODO: clean this
+    # TODO: clean this, JS implementation for switching btw projects type
     @portfolios = Portfolio.all
     #@portfolios = Portfolio.react
     #@portfolios = Portfolio.ruby_on_rails_portfolio_items
@@ -26,7 +26,10 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit 
+    # TODO: Add JS implementation to avoid the repetition after the ones that are already set.
+    3.times { @portfolio_item.technologies.build }    
+  end
 
   def show; end
 
