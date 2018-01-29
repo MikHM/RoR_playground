@@ -1,0 +1,6 @@
+<article class="well">
+  <h2><%= post.title %></h2>
+  <small>Published by <%= post.author %>, <%= distance_of_time_in_words(post.created_at, Time.now) %> ago.</small>
+  <p><%= post.body %></p>
+  <%= link_to "Go to post", blog_post_path(post), :class => "btn btn-default" %>
+</article>
