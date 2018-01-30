@@ -3,5 +3,5 @@
   <h3><%= link_to portfolio.title, portfolio_show_path(portfolio) %></h3>
   <h4><%= portfolio.subtitle %></h4>
   <p><%= portfolio.body %></p>
-  <p><%= link_to "Edit", edit_portfolio_path(portfolio) %></p>
+  <p><%= link_to "Edit", edit_portfolio_path(portfolio) if logged_in?(:admin) %></p>
 </div>
