@@ -4,6 +4,7 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <meta name="keywords" content="<%= @seo_keywords %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,7 +12,7 @@
   <body class="text-center">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
       
-      <%= render "pages/navigation"%>
+      <%= render "pages/pages_navigation"%>
       
       <main role="main" class="inner cover">  
         <p class="notice"><%= notice %></p>
@@ -22,7 +23,7 @@
               
       <%= source_helper("Application") %>
 
-      <%= render "pages/footer" %>
+      <%= render "pages/pages_footer" %>
     </div>
   </body>
 </html>
