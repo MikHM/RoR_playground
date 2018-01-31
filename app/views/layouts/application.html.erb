@@ -8,17 +8,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= render "shared/navigation", navbar_location: "" %>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
+      
+      <%= render "pages/navigation"%>
+      
+      <main role="main" class="inner cover">  
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        
+        <%= yield %>
+      </main>
+              
+      <%= source_helper("Application") %>
 
-    <%= yield %>
-    
-    <%= source_helper("Application") %>
-
-    <%= @copyright %>
+      <%= render "pages/footer" %>
+    </div>
   </body>
-
 </html>
