@@ -12,11 +12,14 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <header>
+      <%= render "shared/navigation", navbar_location: "bottom" %>
+    </header>
 
     <%= yield %>
     
     <footer>
-      <%= render "shared/navigation", navbar_location: "bottom" %>
+      <%= @copyright %>
     </footer>
     
     <%= source_helper("Portfolio") %>
