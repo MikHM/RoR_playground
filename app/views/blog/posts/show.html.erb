@@ -1,11 +1,11 @@
-<h1>Show</h1>
-<h2><%= @post.title %></h2>
-<p><small>Written by <%= @post.author %></small></p>
-<p>
-  <%= @post.body %>
-</p>
+<div class="blog-post col-md-8 offset-md-2 mt-5">
+  <h2 class="blog-post-title"><%= @post.title %></h2>
+  <p class="blog-post-meta">Written by <%= @post.author %> <%= distance_of_time_in_words(@post.created_at, Time.now) %> ago.</p>
+  <p>
+    <%= @post.body.html_safe %>
+  </p>
 
-<% if logged_in?(:admin) %>
+  <% if logged_in?(:admin) %>
 
   <hr>
 
@@ -18,10 +18,11 @@
 
   <hr>
 
-<% end %>
+  <% end %>
 
-<%= render "blog/comments/comments" %>
+  <%= render "blog/comments/comments" %>
 
-<hr>
+  <hr>
 
 <%= render "blog/comments/comments_form" %>
+</div>
