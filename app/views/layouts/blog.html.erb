@@ -3,6 +3,7 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="<%= @seo_keywords %>">
     <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'blog/posts', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,8 +12,11 @@
 
   <body>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>        
+      <% end %>
   
       <%= render "blog_navigation", navbar_location: "top" %>
 
