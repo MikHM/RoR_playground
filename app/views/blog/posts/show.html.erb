@@ -1,28 +1,30 @@
-<div class="blog-post col-md-8 offset-md-2 mt-5">
-  <h2 class="blog-post-title"><%= @post.title %></h2>
-  <p class="blog-post-meta">Written by <%= @post.author %> <%= distance_of_time_in_words(@post.created_at, Time.now) %> ago.</p>
-  <p>
-    <%= @post.body.html_safe %>
-  </p>
-
-  <% if logged_in?(:admin) %>
-
-  <hr>
-
-  <%= link_to "Edit", edit_blog_post_path(@post), :class => "btn btn-default" %>
-  <%= link_to "Delete", blog_post_path(@post),
-              method: :delete,
-              data: { confirm: "Are you sure?"},
-              :class => "btn btn-danger" %>
-  <%= link_to @post.status, toggle_status_blog_post_path(@post), :class => "btn btn-warning" %>
-
-  <hr>
-
-  <% end %>
-
-  <%= render "blog/comments/comments" %>
-
-  <hr>
-
-<%= render "blog/comments/comments_form" %>
+<div class="row">
+  <div class="blog-post col-md-8 offset-md-2 mt-5">
+      <h2 class="blog-post-title"><%= @post.title %></h2>
+      <p class="blog-post-meta">Written by <%= @post.author %> <%= distance_of_time_in_words(@post.created_at, Time.now) %> ago.</p>
+      <p>
+        <%= @post.body.html_safe %>
+      </p>
+    
+      <% if logged_in?(:admin) %>
+    
+      <hr>
+    
+      <%= link_to "Edit", edit_blog_post_path(@post), :class => "btn btn-default" %>
+      <%= link_to "Delete", blog_post_path(@post),
+                  method: :delete,
+                  data: { confirm: "Are you sure?"},
+                  :class => "btn btn-danger" %>
+      <%= link_to @post.status, toggle_status_blog_post_path(@post), :class => "btn btn-warning" %>
+    
+      <hr>
+    
+      <% end %>
+    
+      <%= render "blog/comments/comments" %>
+    
+      <hr>
+    
+    <%= render "blog/comments/comments_form" %>
+    </div>
 </div>
