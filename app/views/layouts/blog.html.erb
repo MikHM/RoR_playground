@@ -10,18 +10,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></>
+  
+      <%= render "blog_navigation", navbar_location: "top" %>
 
-    <%= render "shared/navigation", navbar_location: "top" %>
+    </div>
 
     <%= yield %>
     
-    <footer>
-    </footer>
-
-    <%= source_helper("Blog") %>
-
+    <%= render "blog_footer" %>    
+    
   </body>
 
 </html>

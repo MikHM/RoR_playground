@@ -18,7 +18,7 @@ class Blog::PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Blog::Post.new
   end
 
   def create
