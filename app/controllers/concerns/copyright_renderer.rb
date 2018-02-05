@@ -6,6 +6,7 @@ module CopyrightRenderer
   end
   
   def copyright
-    @copyright = "&copy; #{Time.now.year} | <b>Hemroda Martin</b> All right reserved".html_safe
+    # TODO: change "http://localhost:3000/" to the real url later
+    @copyright = "&copy; #{Time.now.year} | <b><a href='http://localhost:3000/'>Hemroda Martin</a></b> All right reserved".html_safe
   end
 end

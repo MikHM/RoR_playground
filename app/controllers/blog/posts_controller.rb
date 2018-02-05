@@ -6,7 +6,7 @@ class Blog::PostsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, admin: :all
 
   def index
-    @posts = Blog::Post.all
+    @posts = Blog::Post.page(params[:page]).per(4)
     @page_title += " - Blog" 
   end
 
