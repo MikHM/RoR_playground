@@ -12,16 +12,13 @@
 
   <body>
     <div class="container">
-      <% if notice %>
-        <p class="notice"><%= notice %></p>
-      <% elsif alert %>
-        <p class="alert"><%= alert %></p>        
-      <% end %>
   
       <%= render "blog_navigation", navbar_location: "top" %>
 
     </div>
 
+    <%= render "shared/notice_alert" %>
+    
     <%= yield %>
     
     <%= render "blog_footer" %>    

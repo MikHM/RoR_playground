@@ -11,11 +11,10 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <header>
-      <%= render "shared/navigation", navbar_location: "bottom" %>
-    </header>
+    
+    <%= render "portfolio_navigation" %>
+    
+    <%= render "shared/notice_alert" %>
 
     <%= yield %>
     
