@@ -1,0 +1,24 @@
+<h1>Books</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Country</th>
+    <th>Genre</th>
+    <th>Sales</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author.name %></td>
+        <td><%= book.author.country %></td>
+        <td><%= book.genre.name %></td>
+        <td><%= book.sales %></td>
+        <!-- TODO: Add price section and use number_to_currency to properly display the price -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

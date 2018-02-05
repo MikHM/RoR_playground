@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PlaygroundRor</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="keywords" content="<%= @seo_keywords %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      
+      <%= render "pages/pages_navigation"%>
+      
+      <main role="main" class="inner cover">  
+        
+        <%= render "shared/notice_alert" %>
+        
+        <%= yield %>
+        
+      </main>
+              
+      <%= source_helper("Application") %>
 
-    <%= yield %>
-
+      <%= render "pages/pages_footer" %>
+    </div>
   </body>
-
 </html>

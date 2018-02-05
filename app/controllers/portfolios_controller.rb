@@ -1,12 +1,19 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  layout "portfolio"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, admin: :all
+
 
   def index
+    # TODO: clean this, JS implementation for switching btw projects type
     @portfolios = Portfolio.all
+    #@portfolios = Portfolio.react
+    #@portfolios = Portfolio.ruby_on_rails_portfolio_items
   end
 
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -21,7 +28,10 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit 
+    # TODO: Add JS implementation to avoid the repetition after the ones that are already set.
+    3.times { @portfolio_item.technologies.build }    
+  end
 
   def show; end
 
@@ -46,7 +56,12 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:title, :subtitle, :body)
+    params.require(:portfolio).permit(:title,
+                                      :subtitle, 
+                                      :body, 
+                                      :main_image, 
+                                      :thumb_image, 
+                                      technologies_attributes:[:name])
   end
 
   def set_portfolio

@@ -1,0 +1,31 @@
+<h3>Add comments</h3>
+
+<!-- TODO: Find a way to DISPLAY the error messages if comment not valid.-->
+<!--
+<-% if @post.comments.last.errors.any? %>
+  <-%= @post.comments.last.errors.full_messages.each do |msg| %>
+    <p><-%= msg %></p>
+  <-% end %>
+<-% end %>
+-->
+<%
+=begin %>
+<!-- TODO: fix this path issue!!-->
+<%= form_for([@post, @post.comments.build]) do |f| %>
+
+  <p>
+    <%= f.label :user_name %> <br>
+    <%= f.text_field :user_name, :class => "form-control" %>
+  </p>
+
+  <p>
+    <%= f.label :message %> <br>
+    <%= f.text_area :message, :class => "form-control" %>
+  </p>
+
+  <p>
+    <%= f.submit(:class => "btn btn-primary")  %>
+  </p>
+<% end %>
+<%
+=end %>

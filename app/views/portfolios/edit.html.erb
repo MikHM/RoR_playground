@@ -1,25 +1,8 @@
-<h2>Edit Portfolio Item</h2>
-
-<%= form_for(@portfolio_item) do |f| %>
-  <div class="field">
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
+<div class="container">
+  <div class="col-md-8 offset-md-2">
+    <div class="portfolio_back mb-4 box-shadow">
+      <h2>Edit Portfolio Item</h2>    
+      <%= render "form", portfolio_item: @portfolio_item %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :subtitle %> <br>
-    <%= f.text_field :subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :body %> <br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to "Delete Portfolio Item", portfolio_path(@portfolio_item),
-            method: :delete,
-            data: { confirm: "Are you sure you want to delete?"},
-            class: "btn btn-danger"
-%>
+</div>

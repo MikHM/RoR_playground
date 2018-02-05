@@ -1,0 +1,7 @@
+<h2>You lost?</h2>
+
+<% if @second && @first %>
+  <p>You are looking for <strong><%= @first %></strong>, and: <strong><%= @second %></strong>, but I don't know what those are.
+<% elsif @first %>
+  <p>You are looking for <strong><%= @first %></strong>, but I don't know what that is.
+<% end %>

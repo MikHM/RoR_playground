@@ -1,11 +1,5 @@
-<h1>Home</h1>
-
-<h2>Blog Posts</h2>
-<% @posts.each do |post| %>
-  <li><%= post.title %></li>
-<% end %>
-
-<h2>Skills</h2>
-<% @skills.each do |skill| %>
-  <li><%= skill.title %> <%= skill.percent_spent_on %>%</li>
-<% end %>
+<h1 class="cover-heading">Wanna be Dev from Paris.</h1>
+<p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quasi.</p>
+<p class="lead">
+  <%= link_to  "About me", about_path, { :class => "btn btn-lg btn-secondary"} %>
+</p>

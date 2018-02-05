@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def index
-
-  end
+  include DeviseWhitelist
+  include SetSource
+  include CurrentUserConcern
+  include DefaultPageContent
+  include CopyrightRenderer
 end

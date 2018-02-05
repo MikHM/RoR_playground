@@ -1,4 +1,21 @@
-<%= image_tag @portfolio_item.main_image %>
-<h1><%= @portfolio_item.title %></h1>
-<h4><%= @portfolio_item.subtitle %></h4>
-<p><%= @portfolio_item.body%></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <%= image_tag @portfolio_item.main_image, class: "img-fluid" %>
+
+      <h1 class="mt-5 mb-3"><%= @portfolio_item.title %></h1>
+      <div class="mb-3">
+        <em><%= @portfolio_item.subtitle %></em>
+      </div>
+      
+      <p><%= @portfolio_item.body%></p>
+      
+      <h2 class="mt-3 mb-2">Technologies Used:</h2>
+      
+      <% @portfolio_item.technologies.each do |t| %>
+        <span><%= t.name %></span>
+      <% end %>
+    </div>
+  </div>
+</div>
