@@ -38,7 +38,7 @@ end
 
 # Portfolio Items
 # ###################################
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
                title: "Portfolio number #{portfolio_item + 1}",
                subtitle: "Ruby On Rails",
