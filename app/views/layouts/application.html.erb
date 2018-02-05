@@ -15,10 +15,11 @@
       <%= render "pages/pages_navigation"%>
       
       <main role="main" class="inner cover">  
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        
+        <%= render "shared/notice_alert" %>
         
         <%= yield %>
+        
       </main>
               
       <%= source_helper("Application") %>
