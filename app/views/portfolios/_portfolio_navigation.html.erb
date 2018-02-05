@@ -11,9 +11,13 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="https://twitter.com/_MikHM" class="text-white">Follow on Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/hbotogaly/" class="text-white">Link me @ LinkedIn</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
+            <%= link_to "Home", root_path, { :class => "text-white active"} %>
+            <%= link_to  "Portfolio", portfolios_path, { :class => "text-white"} %>
+            <%= link_to "Blog", blog_posts_path, { :class => "text-white"} %>
+            <%= link_to "Books", bookshop_books_path, { :class => "text-white"} %>
+            <%#= link_to "About", about_path, { :class => "text-white"} %>
+            <%= link_to "Contact", contact_path, { :class => "text-white"} %>
+            <%= login_helper("text-white") %>
           </ul>
         </div>
       </div>
