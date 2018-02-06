@@ -1,6 +1,6 @@
 class Admin::DashboardController < ApplicationController
   layout "admin"
-  
+
   def main
 
   end
@@ -11,5 +11,9 @@ class Admin::DashboardController < ApplicationController
 
   def users
 
+  end
+
+  def announcements
+    
   end
 end

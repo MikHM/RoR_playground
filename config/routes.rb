@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get 'dashboard/main'
     get 'dashboard/users'
     get 'dashboard/posts'
+
+    resources :announcements
   end
 
   namespace :blog do
