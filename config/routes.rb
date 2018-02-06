@@ -18,8 +18,6 @@ Rails.application.routes.draw do
     get 'dashboard/main'
     get 'dashboard/users'
     get 'dashboard/posts'
-    get 'dashboard/:premier', to: 'dashboard#something'
-    get 'dashboard/:premier/:deuxieme', to: 'dashboard#something'
   end
 
   namespace :blog do
