@@ -17,4 +17,15 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def nav_helper(style, tag_type)
+links=<<NAV
+  <#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
+  <#{tag_type}><a href="#{portfolios_path}" class="#{style}">Portfolio</a></#{tag_type}>
+  <#{tag_type}><a href="#{blog_posts_path}" class="#{style}">Blog</a></#{tag_type}>
+  <#{tag_type}><a href="#{bookshop_books_path}" class="#{style}">Books</a></#{tag_type}>
+  <#{tag_type}><a href="#{contact_path}" class="#{style}">Contact</a></#{tag_type}>
+NAV
+    links.html_safe
+  end
 end
