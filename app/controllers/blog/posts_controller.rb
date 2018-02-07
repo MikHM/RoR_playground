@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Blog::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
