@@ -1,4 +1,6 @@
 class Admin::DashboardController < ApplicationController
+  layout "admin"
+
   def main
 
   end
@@ -11,8 +13,7 @@ class Admin::DashboardController < ApplicationController
 
   end
 
-  def something
-    @first = params[:premier]
-    @second = params[:deuxieme]
+  def announcements
+    
   end
 end
