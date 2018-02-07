@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130130531) do
+ActiveRecord::Schema.define(version: 20180207153515) do
+
+  create_table "announcements", force: :cascade do |t|
+    t.text "message"
+    t.date "publication"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookshop_authors", force: :cascade do |t|
     t.string "name"
@@ -69,6 +76,7 @@ ActiveRecord::Schema.define(version: 20180130130531) do
     t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   create_table "posts", force: :cascade do |t|
