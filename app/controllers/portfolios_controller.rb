@@ -6,11 +6,19 @@ class PortfoliosController < ApplicationController
 
   def index
     # TODO: clean this, JS implementation for switching btw projects type
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.by_position
     #@portfolios = Portfolio.react
     #@portfolios = Portfolio.ruby_on_rails_portfolio_items
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
+  end
+  
   def new
     @portfolio_item = Portfolio.new
     3.times { @portfolio_item.technologies.build }
