@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'about' => 'pages#about'
 
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end
   get 'portfolio/:id' => 'portfolios#show', as: 'portfolio_show'
 
   namespace :admin do
