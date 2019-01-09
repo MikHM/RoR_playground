@@ -1,0 +1,3 @@
+web: bundle exec rails s
+mailer: mailcatcher -f
+server: bin/webpack-dev-server
