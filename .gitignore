@@ -122,3 +122,7 @@ Session.vim
 # Auto-generated tag files
 tags
 /config/secrets.yml
+
+Procfile
+
+config/database.yml
